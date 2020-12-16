@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-
+import Test1 from './components/test'
+import Home from './components/home'
 
 
 class App extends React.Component {
@@ -15,6 +16,8 @@ class App extends React.Component {
     
     // debugger
     <div>
+      <Test1 />
+      <Home />
           <button onClick={this.handleClick}>Click to Fetch!</button>
     </div>
   );}
