@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
-import Test1 from './components/test'
 import Home from './components/home'
+import { NavBar } from './components/navbar';
 
 
 class App extends React.Component {
@@ -16,9 +16,9 @@ class App extends React.Component {
     
     // debugger
     <div>
-      <Test1 />
+      <NavBar />
       <Home />
-          <button onClick={this.handleClick}>Click to Fetch!</button>
+          <button onClick={this.handleClick}>Click to Save to results tab!</button>
     </div>
   );}
 }

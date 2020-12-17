@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 
 function handleChange(){
-    console.log(document.body.getElementsByClassName('12345')[0].value)
+    console.log(document.body.getElementsByClassName('fuel')[0].value)
 }
 
 
-class Form extends Component{
+class FormFuel extends Component{
     state = {
-        fuel1: "test1",
-        fuel2: "",
-        fuel3: "",
+        fuel1:"",
+        fuel2:"",
+        fuel3:"",
         fuel4:"",
         fuel5:"",
         fuel6:"",
@@ -20,19 +20,19 @@ class Form extends Component{
 
     render(){
     return(
-
-            <select className="12345" onChange = {handleChange}>
-            <option value="cups of sugar"> {this.state.fuel1.name}</option>
-            <option value="atomic bombs">{this.state.fuel2.name}</option>
+        <div>
+            <p>How many
+            <select className="fuel" onChange = {handleChange}>
+            <option value={this.state.fuel1.name}> {this.state.fuel1.name}</option>
+            <option value={this.state.fuel2.name}>{this.state.fuel2.name}</option>
             <option value={this.state.fuel3.name}> {this.state.fuel3.name} </option>
             <option value={this.state.fuel4.name}> {this.state.fuel4.name} </option>
             <option value={this.state.fuel5.name}> {this.state.fuel5.name} </option>
             <option value={this.state.fuel6.name}> {this.state.fuel6.name} </option>
             <option value={this.state.fuel7.name}> {this.state.fuel7.name} </option>
-
-            {/* <option> {this.state.fuel[5].name}</option> */}
-            {/* <option value="nothing"> {this.state.fuel[5].name} </option> */}
             </select>
+            </p>
+        </div>
     )}
 
 componentDidMount(){
@@ -51,11 +51,9 @@ componentDidMount(){
         fuel6: json[5],
         fuel7: json[6]
     })
-    console.log(this.state.fuel[5].name)
   })
-    // console.log(this.state.fuel[0].name)
  }
 }
-export default Form
+export default FormFuel
 
 

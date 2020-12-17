@@ -1,12 +1,14 @@
 import React from 'react'
-import Form from './form'
+import FormDist from './formdist'
+import FormFuel from './formfuel'
 
 
 const Home = (props) => {
     return(
         <div>
         <h2>Welcome to Rocket Science!</h2>
-        <small>These are your current options</small><Form />
+        <FormFuel />
+        <FormDist />
         </div>
     )
 }
