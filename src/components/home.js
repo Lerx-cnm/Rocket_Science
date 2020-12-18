@@ -1,16 +1,31 @@
 import React from 'react'
 import FormDist from './formdist'
 import FormFuel from './formfuel'
+import { Component, connect } from 'react'
+import { sendComb } from '../actions/sendComb'
 
 
-const Home = (props) => {
+
+class Home extends Component{
+    submit(){
+        let obj = {
+            fuel: document.body.getElementsByClassName('fuel')[0].value, 
+            distance: document.body.getElementsByClassName('distance')[0].value
+    }
+    // debugger
+    this.props.sendComb()
+}
+
+    render(){
     return(
-        <div>
+    <div>
         <h2>Welcome to Rocket Science!</h2>
         <FormFuel />
         <FormDist />
-        </div>
+        <button onClick={this.submit}>Save to Results Tab!</button>
+    </div>
     )
+  }
 }
 
-export default Home
+export default connect(null, {sendComb})(Home)

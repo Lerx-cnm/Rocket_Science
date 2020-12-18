@@ -17,7 +17,7 @@ class FormFuel extends Component{
          return(
         <div>
             <p>How many
-            <select className="fuel" onChange = {handleChange}>
+            <select className="fuel" onChange = {handleChange} style={{marginLeft: "5px", marginRight: "5px"}}>
             <option value={this.props.fuel[0].name}> {this.props.fuel[0].name}</option>
             <option value={this.props.fuel[1].name}>{this.props.fuel[1].name}</option>
             <option value={this.props.fuel[2].name}> {this.props.fuel[2].name} </option>
@@ -25,7 +25,7 @@ class FormFuel extends Component{
             <option value={this.props.fuel[4].name}> {this.props.fuel[4].name} </option>
             <option value={this.props.fuel[5].name}> {this.props.fuel[5].name} </option>
             <option value={this.props.fuel[6].name}> {this.props.fuel[6].name} </option>
-            </select>
+            </select>, (in terms of Joules)
             </p>
         </div>
         )

@@ -7,11 +7,6 @@ import Results from './components/results'
 import About from './components/about'
 
 class App extends React.Component {
-  handleClick = event => {
-    fetch('http://localhost:3000/fuels')
-      .then(res => res.json())
-      .then(json => console.log(json)) 
-  }
   render(){
   return (
 
@@ -27,7 +22,6 @@ class App extends React.Component {
         <Route exact path='/about' component={About} />
         </Switch>
       </Router>
-      <button onClick={this.handleClick}>Click to Save to results tab!</button>
     </div>
   );}
 }

@@ -4,7 +4,6 @@ export const getFuels = () => {
         .then((resp) => resp.json())
         .then((result) => {
         dispatch({ type: "FETCH_FUELS", payload: result})
-        }
-        );
+        });
     };
 };
