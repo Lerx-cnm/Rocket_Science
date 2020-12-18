@@ -3,6 +3,7 @@ class CreateFuelTable < ActiveRecord::Migration[5.0]
         create_table :fuels do |t|
             t.string :name
             t.integer :kjoules
+            t.integer :combination_id
 
             t.timestamps
         end
