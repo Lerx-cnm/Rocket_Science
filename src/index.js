@@ -5,9 +5,7 @@ import { createStore } from 'redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import fuelReducer from './reducers/fuelReducer'
-
-const store = createStore(fuelReducer);
+import store from './store'
 
 ReactDOM.render(
   <React.StrictMode>

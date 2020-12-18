@@ -1,58 +1,54 @@
 import React, {Component} from 'react'
+import { getDistances } from '../actions/fetchDistances'
+import { connect } from 'react-redux';
+
 
 function handleChange(){
-    console.log(document.body.getElementsByClassName('dist')[0].value)
 }
 
 
-class FormDist extends Component{
-    state = {
-        dist1:"",
-        dist2:"",
-        dist3:"",
-        dist4:"",
-        dist5:"",
-        dist6:"",
-        dist7:"",
-        dist8:""
-    }
-
+class FormDistance extends Component{
+    componentDidMount(){
+        this.props.getDistances();
+     }
+   comp(){
+     if(this.props.distance){
+         return(
+        <div>
+            <p>How many
+            <select className="distance" onChange = {handleChange}>
+            <option value={this.props.distance[0].name}> {this.props.distance[0].name}</option>
+            <option value={this.props.distance[1].name}>{this.props.distance[1].name}</option>
+            <option value={this.props.distance[2].name}> {this.props.distance[2].name} </option>
+            <option value={this.props.distance[3].name}> {this.props.distance[3].name} </option>
+            <option value={this.props.distance[4].name}> {this.props.distance[4].name} </option>
+            <option value={this.props.distance[5].name}> {this.props.distance[5].name} </option>
+            <option value={this.props.distance[6].name}> {this.props.distance[6].name} </option>
+            </select>
+            </p>
+        </div>
+        )
+     }else{
+         return(
+         <p>Loading...</p>
+         )}
+ }
 
     render(){
+        // debugger
     return(
         <div>
-            <p> does it take to go 
-            <select className="dist" onChange = {handleChange}>
-            <option value={this.state.dist1.name}> {this.state.dist1.name}</option>
-            <option value={this.state.dist2.name}>{this.state.dist2.name}</option>
-            <option value={this.state.dist3.name}> {this.state.dist3.name} </option>
-            <option value={this.state.dist4.name}> {this.state.dist4.name} </option>
-            <option value={this.state.dist5.name}> {this.state.dist5.name} </option>
-            <option value={this.state.dist6.name}> {this.state.dist6.name} </option>
-            <option value={this.state.dist7.name}> {this.state.dist7.name} </option>
-            </select>
-            ?
-            </p>
+        {this.comp()}
         </div>
     )}
 
-componentDidMount(){
-    this.setState({
-        fuel: "testing2"
-    })
-    fetch('http://localhost:3000/distances/')
-    .then(response => response.json())
-    .then(json => { 
-        this.setState({
-        dist1: json[0],
-        dist2: json[1],
-        dist3: json[2],
-        dist4: json[3],
-        dist5: json[4],
-        dist6: json[5],
-        dist7: json[6]
-    })
-  })
- }
+
 }
-export default FormDist
+const mapStateToProps = state =>{
+    // debugger
+    return{
+        distance: state.distances.distances
+    }
+}
+
+export default connect(mapStateToProps, { getDistances })(FormDistance)

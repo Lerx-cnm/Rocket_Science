@@ -1,11 +1,11 @@
   
-export default function fuelsReducer(state = {}, action) {
+export default function distancesReducer(state = {}, action) {
     // debugger
 	switch (action.type) {
-		case 'FETCH_FUELS':
+		case 'FETCH_DISTANCES':
             // debugger
 			return {
-				fuels: action.payload
+				distances: action.payload
 			}
 		default:
 			return state;
