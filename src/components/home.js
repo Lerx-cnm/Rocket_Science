@@ -1,19 +1,20 @@
 import React from 'react'
 import FormDist from './formdist'
 import FormFuel from './formfuel'
-import { Component, connect } from 'react'
+import { Component } from 'react'
+import { connect } from 'react-redux'
 import { sendComb } from '../actions/sendComb'
 
 
 
 class Home extends Component{
-    submit(){
+    submit = () => {
         let obj = {
             fuel: document.body.getElementsByClassName('fuel')[0].value, 
             distance: document.body.getElementsByClassName('distance')[0].value
     }
-    // debugger
-    this.props.sendComb()
+    debugger
+    this.props.sendComb(obj)
 }
 
     render(){
@@ -24,8 +25,8 @@ class Home extends Component{
         <FormDist />
         <button onClick={this.submit}>Save to Results Tab!</button>
     </div>
-    )
-  }
-}
+    );
+  };
+};
 
-export default connect(null, {sendComb})(Home)
+export default connect(null, { sendComb })(Home)
