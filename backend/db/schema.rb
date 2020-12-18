@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_14_191952) do
 
   create_table "distances", force: :cascade do |t|
     t.string "name"
-    t.integer "lightyears"
+    t.float "lightyears"
     t.integer "combination_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
