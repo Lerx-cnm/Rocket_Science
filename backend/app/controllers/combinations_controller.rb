@@ -1,5 +1,6 @@
 class CombinationsController < ApplicationController
     def create
+        Combination.destroy_all
         fuel = Fuel.find_by(name: params[:fuel])
         dist = Distance.find_by(name: params[:distance])
         array = []
