@@ -8,8 +8,15 @@ let display = (props) => {
     // debugger
     if(props.comb.comb){
     let array = props.comb.comb.name.split("_")
+    let num;
+    if(props.comb.comb.result < 1){
+        num = props.comb.comb.result.toFixed(20).toLocaleString()
+    }else if(props.comb.comb.result >1){
+        debugger
+        num = props.comb.comb.result.valueOf().toLocaleString()
+        }
     return(
-        <p>It takes {props.comb.comb.result} {array[0]} to get {array[1]}</p>
+        <p>It takes about {num} {array[0]} to get {array[1]}</p>
     )}
     else{
         return(
@@ -27,7 +34,7 @@ const Results = (props) => {
     )
 }
 const mapStateToProps = state =>{
-    debugger
+    // debugger
     return{
         comb: state.combs
     }

@@ -14,8 +14,8 @@ class CombinationsController < ApplicationController
         else
             num = num.round(3)
         end
-        binding.pry
         comb = Combination.new(name: array, result: num)
+        # binding.pry
         comb.save
         fuel.combination_id, dist.combination_id = comb.id
 

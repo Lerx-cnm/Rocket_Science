@@ -1,6 +1,7 @@
 import React from 'react'
 import FormDist from './formdist'
 import FormFuel from './formfuel'
+import { useHistory } from "react-router-dom";
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { sendComb } from '../actions/sendComb'
@@ -13,9 +14,10 @@ class Home extends Component{
             fuel: document.body.getElementsByClassName('fuel')[0].value, 
             distance: document.body.getElementsByClassName('distance')[0].value
     }
-    debugger
     this.props.sendComb(obj)
+
 }
+
 
     render(){
     return(
