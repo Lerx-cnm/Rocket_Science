@@ -29,10 +29,9 @@ redirect = () => {
     render(){
     return(
     <div>
-        <h2>Welcome to Rocket Science!</h2>
         <FormFuel />
         <FormDist />
-        <Link onClick={this.submit} to='/results'>Save to Results Tab!</Link>
+        <Link onClick={this.submit} to='/results' className="button">Save to Results Tab!</Link>
     </div>
     );
   };
