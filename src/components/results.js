@@ -23,7 +23,8 @@ const Results = (props) => {
 
     return(
         <div>
-        <p>{display(props)}</p>
+            <h2 style={{font: "Robotica"}}>Results:</h2>
+        <p>  {display(props)}</p>
         </div>
     )
 }
