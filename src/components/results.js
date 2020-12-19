@@ -11,7 +11,7 @@ let display = (props) => {
         num = props.comb.comb.result.valueOf().toLocaleString()
         }
     return(
-        <p>It takes about {num} {array[0]} to propel a rocket {array[1]}</p>
+        <p style={{text: "14px"}}>It takes about {num} {array[0]} to propel a rocket {array[1]}</p>
     )}
     else{
         return(
@@ -22,7 +22,7 @@ let display = (props) => {
 const Results = (props) => {
 
     return(
-        <div>
+        <div style={{textAlign: "center", text: "Robotica"}}>
             <h2 style={{font: "Robotica"}}>Results:</h2>
         <p>  {display(props)}</p>
         </div>

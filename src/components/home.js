@@ -31,7 +31,7 @@ redirect = () => {
     <div>
         <FormFuel />
         <FormDist />
-        <Link onClick={this.submit} to='/results' className="button">Save to Results Tab!</Link>
+        <Link onClick={this.submit} to='/results' className="button2" >Save to Results Tab!</Link>
     </div>
     );
   };
