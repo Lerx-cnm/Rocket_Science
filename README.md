@@ -17,6 +17,6 @@ You will also see any lint errors in the console.
 ### Start API
 
 cd into `backend` in a new terminal and run `rails s` to start your backend server.
-This will let you recieve the proper info and store and let the program run appropietly
+This will let you receive the proper info and store and let the program run appropietly
 
 
