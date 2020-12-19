@@ -4,7 +4,6 @@ export const getDistances = () => {
         .then((resp) => resp.json())
         .then((result) => {
         dispatch({ type: "FETCH_DISTANCES", payload: result})
-        }
-        );
+        });
     };
 };
