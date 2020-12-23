@@ -16,7 +16,7 @@ class FormDistance extends Component{
          return(
         <div>
             <p>does it take to get
-            <select className="select-style" onChange = {handleChange} style={{marginLeft: "5px", marginRight: "5px"}}>
+            <select className="distance" onChange = {handleChange} style={{marginLeft: "5px", marginRight: "5px"}}>
             <option value={this.props.distance[0].name}> {this.props.distance[0].name}</option>
             <option value={this.props.distance[1].name}>{this.props.distance[1].name}</option>
             <option value={this.props.distance[2].name}> {this.props.distance[2].name} </option>
