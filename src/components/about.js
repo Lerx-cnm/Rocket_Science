@@ -25,7 +25,7 @@ const About = () =>{
           <p>Alright, this is where I tell you how I came up with the 'inefficient rocket fuel' formula.
             My first step was doing everything above, turning all my items into outputted energy(Joules).
             From there I needed baseline, or a constant of Joules per Kilometre. I did some research and figured out that it took around 7900
-            Gallons of kerosene to get to the moon, I took the output Joules of 1 gallon of kerosene and then I divided 7'900 by the Km to the moon
+            Gallons of kerosene to get to the moon, I took the output Joules of 1 gallon of kerosene and then I divided 7900 by the Km to the moon
             to get a Joules/Km.  I ended up storing the distances in Lightyears not Kilometres, but in my equation I converted Lightyears back to Kilometres
             for ease with smaller numbers. 
 

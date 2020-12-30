@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 let display = (props) => {
     if(props.comb.comb){
@@ -25,6 +27,7 @@ const Results = (props) => {
         <div style={{textAlign: "center", text: "Robotica"}}>
             <h2 style={{font: "Robotica"}}>Results:</h2>
         <p>  {display(props)}</p>
+        <Link to='/' className='button2'>Home</Link>
         </div>
     )
 }

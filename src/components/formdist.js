@@ -49,7 +49,7 @@ class FormDistance extends Component{
 
 }
 const mapStateToProps = state =>{
-    // debugger
+    debugger
     return{
         distance: state.distances.distances
     }
