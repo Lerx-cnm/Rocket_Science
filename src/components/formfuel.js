@@ -2,12 +2,6 @@ import React, {Component} from 'react'
 import { getFuels } from '../actions/fetchFuels'
 import { connect } from 'react-redux';
 
-
-function handleChange(){
-    // console.log(document.body.getElementsByClassName('fuel')[0].value)
-}
-
-
 class FormFuel extends Component{
     componentDidMount(){
         this.props.getFuels();
@@ -17,7 +11,7 @@ class FormFuel extends Component{
          return(
         <div>
             <p>How many
-            <select className="fuel" onChange = {handleChange} style={{marginLeft: "5px", marginRight: "5px"}}>
+            <select className="fuel" style={{marginLeft: "5px", marginRight: "5px"}}>
             <option value={this.props.fuel[0].name}> {this.props.fuel[0].name}</option>
             <option value={this.props.fuel[1].name}>{this.props.fuel[1].name}</option>
             <option value={this.props.fuel[2].name}> {this.props.fuel[2].name} </option>
@@ -34,9 +28,8 @@ class FormFuel extends Component{
          <p>Loading...</p>
          )}
  }
-
+// s
     render(){
-        // debugger
     return(
         <div>
         {this.comp()}
@@ -46,7 +39,6 @@ class FormFuel extends Component{
 
 }
 const mapStateToProps = state =>{
-    // debugger
     return{
         fuel: state.fuels.fuels
     }

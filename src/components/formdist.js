@@ -2,11 +2,6 @@ import React, {Component} from 'react'
 import { getDistances } from '../actions/fetchDistances'
 import { connect } from 'react-redux';
 
-
-function handleChange(){
-   }
-
-
 class FormDistance extends Component{
     componentDidMount(){
         this.props.getDistances();
@@ -16,7 +11,7 @@ class FormDistance extends Component{
          return(
         <div>
             <p>does it take to get
-            <select className="distance" onChange = {handleChange} style={{marginLeft: "5px", marginRight: "5px"}}>
+            <select className="distance" style={{marginLeft: "5px", marginRight: "5px"}}>
             <option value={this.props.distance[0].name}> {this.props.distance[0].name}</option>
             <option value={this.props.distance[1].name}>{this.props.distance[1].name}</option>
             <option value={this.props.distance[2].name}> {this.props.distance[2].name} </option>
@@ -39,7 +34,6 @@ class FormDistance extends Component{
  }
 
     render(){
-        // debugger
     return(
         <div>
         {this.comp()}
@@ -49,7 +43,6 @@ class FormDistance extends Component{
 
 }
 const mapStateToProps = state =>{
-    debugger
     return{
         distance: state.distances.distances
     }

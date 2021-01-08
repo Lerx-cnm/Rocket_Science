@@ -1,11 +1,13 @@
+// #make more useful
 import Results from "../components/results"
 
 
-const resultsContainer = () =>{
+const ResultsContainer = (props) =>{
+    // console.log(props.ste)
     return(
         <div>
-        <Results />
+        <Results ste={props.res} state={props.state}/>
         </div>
     )}
 
-export default resultsContainer
+export default ResultsContainer

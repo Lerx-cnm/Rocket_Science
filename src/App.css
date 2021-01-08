@@ -38,7 +38,7 @@
 	/* text-shadow:0px 1px 0px #ffffff; */
 }
 .button2:hover {
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom left, rgb(0, 0, 0) 5%, lightgrey 100%);
 	background-color:#f6f6f6;
 }
 .button2:active {

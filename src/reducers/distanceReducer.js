@@ -1,4 +1,4 @@
-  
+//   immutable
 export default function distancesReducer(state = {}, action) {
 	switch (action.type) {
 		case 'FETCH_DISTANCES':

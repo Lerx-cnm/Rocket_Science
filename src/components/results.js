@@ -1,39 +1,51 @@
 import { connect } from 'react-redux';
-import React from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+class Results extends Component{
+    funct = () => {
+        this.props.ste(this.props.comb)
+    }
 
-let display = (props) => {
-    if(props.comb.comb){
-    let array = props.comb.comb.name.split("_")
-    let num;
-    if(props.comb.comb.result < 1){
-        num = props.comb.comb.result.toFixed(20).toLocaleString()
-    }else if(props.comb.comb.result >1){
-        num = props.comb.comb.result.valueOf().toLocaleString()
-        }
-    return(
-        <p style={{text: "14px"}}>It takes about {num} {array[0]} to propel a rocket {array[1]}</p>
+    display = () => {
+    let array 
+    if(this.props.state.result){
+    array = this.props.state.result.map((e)=>{
+    if(e.result < 1){
+        return(<p>It takes {e.result.toFixed(20).toLocaleString()} {e.name.split('_')[0]} to propel a rocket {e.name.split('_')[1]}</p>)
+
+    }else{
+        return(<p>It takes {e.result.valueOf().toLocaleString()} {e.name.split('_')[0]} to propel a rocket {e.name.split('_')[1]}</p>)
+    }}
     )}
+    if(this.props.comb){
+        if(this.props.comb.result < 1){
+    array.push(<p>It takes {this.props.comb.result.toFixed(20).toLocaleString()} {this.props.comb.name.split("_")[0]} to propel a rocket {this.props.comb.name.split('_')[1]}
+    </p>)}
+    else{    
+        array.push(<p>It takes {this.props.comb.result.valueOf().toLocaleString()} {this.props.comb.name.split("_")[0]} to propel a rocket {this.props.comb.name.split('_')[1]}
+</p>)}
+    }
     else{
-        return(
-            <small style={{color:"red"}}>please return home and Make an equation</small>
+        return(<p>Please make a conversion</p>)
+    }
+    return(
+            array
         )
     }
-}
-const Results = (props) => {
 
-    return(
-        <div style={{textAlign: "center", text: "Robotica"}}>
-            <h2 style={{font: "Robotica"}}>Results:</h2>
-        <p>  {display(props)}</p>
-        <Link to='/' className='button2'>Home</Link>
-        </div>
-    )
+    render(){
+        return(
+    <div style={{textAlign: "center", text: "Robotica"}}>
+        <h2 style={{font: "Robotica"}}>Results:</h2>
+        <div> {this.display()}</div>
+        <Link onClick={this.funct} to='/' className='button2'>Home</Link>
+    </div>
+        )}
 }
 const mapStateToProps = state =>{
     return{
-        comb: state.combs
+        comb: state.combs.comb
     }
 }
 

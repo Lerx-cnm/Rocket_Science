@@ -11,6 +11,7 @@ export const NavBar = () =>{
             <Link to='/about' className="button">About</Link>
             </div>
         </header>
-
     )
 }
+
+
