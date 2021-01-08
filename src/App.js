@@ -21,8 +21,7 @@ class App extends React.Component {
   }
 
   render(){
-    // debugger
-  return (
+   return (
     <div>
       <Router>
       {/* location: where you are, history: do stuff, match: params */}
