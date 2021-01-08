@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+// FINALLY FREAKING DID IT LOL
 class Results extends Component{
     funct = () => {
         this.props.ste(this.props.comb)
