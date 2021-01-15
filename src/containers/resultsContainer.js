@@ -5,7 +5,7 @@ import Results from "../components/results"
 const ResultsContainer = (props) =>{
     // console.log(props.ste)
     return(
-        <div>
+        <div style={{color: "white"}}>
         <Results ste={props.res} state={props.state}/>
         </div>
     )}

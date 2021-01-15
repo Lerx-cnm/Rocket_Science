@@ -5,7 +5,6 @@ import { NavBar } from './components/navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from './components/about'
 import ResultsContainer from './containers/resultsContainer';
-import { connect } from 'react-redux';
 
 
 class App extends React.Component {
@@ -13,7 +12,6 @@ class App extends React.Component {
     result: []
   }
   res = (e) => {
-    let array = [this.state, e]
       this.setState({
         result: [...this.state.result, e]
       })
